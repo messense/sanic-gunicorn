@@ -9,7 +9,7 @@ with open(readme) as f:
     long_description = f.read()
 
 setup(
-    name='sanic_gunicorn',
+    name='sanic-gunicorn',
     version='0.1.0',
     author='messense',
     author_email='messense@icloud.com',

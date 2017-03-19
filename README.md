@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-$ pip install -U sanic_gunicorn
+$ pip install -U sanic-gunicorn
 ```
 
 ## Usage
