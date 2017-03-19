@@ -15,7 +15,7 @@ import gunicorn.workers.base as base
 from sanic.server import trigger_events, HttpProtocol, Signal, update_current_time
 from sanic.websocket import WebSocketProtocol
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __all__ = ['Worker']
 
 
