@@ -18,10 +18,16 @@ setup(
     description='Gunicorn worker for Sanic',
     long_description=long_description,
     py_modules=['sanic_gunicorn'],
+    install_requires=[
+        'sanic>=0.4.1',
+        'gunicorn',
+    ],
     include_package_data=True,
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 2 - Pre-Alpha',
+        'Environment :: Web Environment',
         'License :: OSI Approved :: MIT License',
+        'Intended Audience :: Developers',
         'Operating System :: MacOS',
         'Operating System :: POSIX',
         'Operating System :: POSIX :: Linux',
@@ -30,9 +36,5 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
-        'Intended Audience :: Developers',
-        'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Utilities',
     ],
 )
