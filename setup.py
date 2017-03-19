@@ -13,7 +13,7 @@ setup(
     version='0.1.1',
     author='messense',
     author_email='messense@icloud.com',
-    url='https://github.com/messense/sanic_gunicorn',
+    url='https://github.com/messense/sanic-gunicorn',
     keywords='sanic, gunicorn',
     description='Gunicorn worker for Sanic',
     long_description=long_description,
