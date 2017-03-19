@@ -1,4 +1,4 @@
-# sanic_gunicorn
+# sanic-gunicorn
 
 [Gunicorn](http://gunicorn.org/) worker for [Sanic](https://github.com/channelcat/sanic)
 
