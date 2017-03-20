@@ -12,8 +12,13 @@ except ImportError:
 import uvloop
 import gunicorn.workers.base as base
 
+from sanic import Sanic
 from sanic.server import trigger_events, HttpProtocol, Signal, update_current_time
-from sanic.websocket import WebSocketProtocol
+try:
+    from sanic.websocket import WebSocketProtocol
+except ImportError:
+    WebSocketProtocol = None
+
 
 __version__ = '0.1.1'
 __all__ = ['Worker']
@@ -43,9 +48,14 @@ class Worker(base.Worker):
 
         super().init_process()
 
+    @classmethod
+    def check_config(cls, cfg, log):
+        if type(Sanic.__call__) == type(object.__call__):  # NOQA
+            Sanic.__call__ = lambda self: self
+
     def run(self):
         is_debug = self.log.loglevel == logging.DEBUG
-        protocol = (WebSocketProtocol if self.app.callable.websocket_enabled
+        protocol = (WebSocketProtocol if WebSocketProtocol and self.app.callable.websocket_enabled
                     else HttpProtocol)
         self._server_settings = self.app.callable._helper(
             host=None,
